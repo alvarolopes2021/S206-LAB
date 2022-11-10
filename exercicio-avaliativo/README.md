@@ -28,4 +28,8 @@ Na pasta do projeto, execute o comando
 
 > ./node_modules/.bin/cypress run --spec 'cypress/e2e/**/'
 
+> Lembrando que caso algum teste apresente **Erro** atualize a página ou coloque skips nos testes. **Todos** devem rodar e passar
+
+ O site da Mozilla as vezes pode demorar para carregar alguma informação e o teste considera como vazia, causando erro.
+
 🙏 Obrigado
