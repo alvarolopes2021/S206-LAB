@@ -37,7 +37,7 @@ describe('Testing developer mozilla website', () => {
     cy.get('h1').should('have.text', 'HTML: Linguagem de Marcação de Hipertexto');
   }) 
 
-  it('Accessing HTML page and checking topic', () => {
+  it.skip('Accessing HTML page and checking topic', () => {
     cy.viewport(1340, 750)
     cy.visit('https://developer.mozilla.org/pt-BR/');
     cy.get('.top-navigation-main :nth-child(1) > a.top-level-entry').focus();
@@ -46,5 +46,15 @@ describe('Testing developer mozilla website', () => {
     cy.get('.toc > .document-toc-container > .document-toc > #toc-entries > :nth-child(3) > .document-toc-link').should('have.css', 'background-color')
       .and('eq', 'rgba(0, 0, 0, 0)');
   }) 
+
+  it('Changing theme - wrong selection', () => {
+    cy.viewport(1340, 750) 
+    cy.visit('https://developer.mozilla.org/pt-BR/');
+    cy.get('div.theme-switcher-menu > .action > .button-wrap').click();
+    cy.get('.submenu > :nth-child(2) > .button > .button-wrap').click();
+    cy.get('div.theme-switcher-menu > .action > .button-wrap').click();
+    cy.get('.submenu > :nth-child(3) > .button > .button-wrap').should('have.css', 'background-color')
+      .and('not.eq', 'rgb(27, 27, 27)');
+  });
 
 })
