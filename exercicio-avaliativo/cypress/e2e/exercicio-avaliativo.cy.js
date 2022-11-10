@@ -2,7 +2,7 @@
 
 describe('Testing developer mozilla website', () => {
 
-  it.skip('Changing theme', () => {
+  it('Changing theme', () => {
     cy.viewport(1340, 750) 
     cy.visit('https://developer.mozilla.org/pt-BR/');
     cy.get('div.theme-switcher-menu > .action > .button-wrap').click();
@@ -12,7 +12,7 @@ describe('Testing developer mozilla website', () => {
       .and('eq', 'rgb(27, 27, 27)');
   });
 
-  it.skip('Searching', () => {
+  it('Searching', () => {
     cy.viewport(1340, 750)
     cy.visit('https://developer.mozilla.org/pt-BR/');
     cy.get('#hp-search-input').type('doctype');
@@ -20,7 +20,7 @@ describe('Testing developer mozilla website', () => {
     cy.get('h1').should('contain.text', 'Search results for: doctype')
   }) 
 
-  it.skip('Checking if the language is NOT portuguese', () => {
+  it('Checking if the language is NOT portuguese', () => {
     cy.viewport(1340, 750)
     cy.visit('https://developer.mozilla.org/pt-BR/');
     cy.get('.top-navigation-main :nth-child(1) > a.top-level-entry').click();
@@ -29,7 +29,7 @@ describe('Testing developer mozilla website', () => {
     cy.get('#languages-switcher-button > .button-wrap').should('not.have.text', 'Portuguese')
   }) 
 
-  it.skip('Accessing HTML page', () => {
+  it('Accessing HTML page', () => {
     cy.viewport(1340, 750)
     cy.visit('https://developer.mozilla.org/pt-BR/');
     cy.get('.top-navigation-main :nth-child(1) > a.top-level-entry').focus();
@@ -37,7 +37,7 @@ describe('Testing developer mozilla website', () => {
     cy.get('h1').should('have.text', 'HTML: Linguagem de Marcação de Hipertexto');
   }) 
 
-  it.skip('Accessing HTML page and checking topic', () => {
+  it('Accessing HTML page and checking topic', () => {
     cy.viewport(1340, 750)
     cy.visit('https://developer.mozilla.org/pt-BR/');
     cy.get('.top-navigation-main :nth-child(1) > a.top-level-entry').focus();
