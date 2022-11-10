@@ -20,13 +20,31 @@ describe('Testing developer mozilla website', () => {
     cy.get('h1').should('contain.text', 'Search results for: doctype')
   }) 
 
-  it('Checking if the language is NOT portuguese', () => {
+  it.skip('Checking if the language is NOT portuguese', () => {
     cy.viewport(1340, 750)
     cy.visit('https://developer.mozilla.org/pt-BR/');
     cy.get('.top-navigation-main :nth-child(1) > a.top-level-entry').click();
     cy.get('#languages-switcher-button > .button-wrap').click();
     cy.get('.submenu > :nth-child(2) > .button').click();
     cy.get('#languages-switcher-button > .button-wrap').should('not.have.text', 'Portuguese')
+  }) 
+
+  it.skip('Accessing HTML page', () => {
+    cy.viewport(1340, 750)
+    cy.visit('https://developer.mozilla.org/pt-BR/');
+    cy.get('.top-navigation-main :nth-child(1) > a.top-level-entry').focus();
+    cy.get('.html-link-container .submenu-item ').first().click()
+    cy.get('h1').should('have.text', 'HTML: Linguagem de Marcação de Hipertexto');
+  }) 
+
+  it('Accessing HTML page and checking topic', () => {
+    cy.viewport(1340, 750)
+    cy.visit('https://developer.mozilla.org/pt-BR/');
+    cy.get('.top-navigation-main :nth-child(1) > a.top-level-entry').focus();
+    cy.get('.html-link-container .submenu-item ').first().click({force:true})
+    cy.get('.toc > .document-toc-container > .document-toc > #toc-entries > :nth-child(3) > .document-toc-link').click({force:true});
+    cy.get('.toc > .document-toc-container > .document-toc > #toc-entries > :nth-child(3) > .document-toc-link').should('have.css', 'background-color')
+      .and('eq', 'rgba(0, 0, 0, 0)');
   }) 
 
 })
