@@ -22,4 +22,10 @@ Os testes serão executados automáticamente e são atualizados ao apertar _Ctrl
 
 ```
 
+### Gerando relatórios
+
+Na pasta do projeto, execute o comando
+
+> ./node_modules/.bin/cypress run --spec 'cypress/e2e/**/'
+
 🙏 Obrigado
