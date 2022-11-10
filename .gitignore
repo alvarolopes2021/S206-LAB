@@ -2,3 +2,4 @@
 */cypress/reports
 */cypress/videos
 *repo.txt
+*.md.backup
