@@ -2,4 +2,8 @@
 */cypress/reports
 */cypress/videos
 *repo.txt
+*/target
 *.md.backup
+*.classpath
+*.project
+*.settings
