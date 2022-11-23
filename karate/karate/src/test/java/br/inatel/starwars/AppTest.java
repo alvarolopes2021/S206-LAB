@@ -1,4 +1,4 @@
-package br.inatel.karate;
+package br.inatel.starwars;
 
 import static org.junit.Assert.assertTrue;
 

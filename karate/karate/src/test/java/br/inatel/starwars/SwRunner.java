@@ -1,4 +1,4 @@
-package br.inatel.karate;
+package br.inatel.starwars;
 
 import com.intuit.karate.junit5.Karate;
 
