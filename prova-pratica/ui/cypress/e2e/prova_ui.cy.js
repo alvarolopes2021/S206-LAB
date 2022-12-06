@@ -2,7 +2,7 @@
 
 describe('Test scenarios for automationintesting.online', () => {
 
-  it.skip('Fill message fields', () => {
+  it('Fill message fields', () => {
     let info = createMessageFileds();
     cy.visit('https://automationintesting.online/');
     cy.get('[data-testid="ContactName"]').type(info[0]);
@@ -14,7 +14,7 @@ describe('Test scenarios for automationintesting.online', () => {
     cy.get(':nth-child(2) > div > h2').should('contain.text', 'Thanks for getting in touch');
   })
 
-  it.skip('Fill message fields missing description characters', () => {
+  it('Fill message fields missing description characters', () => {
     let info = createMessageFileds();
     cy.visit('https://automationintesting.online/');
     cy.get('[data-testid="ContactName"]').type(info[0]);

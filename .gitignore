@@ -1,6 +1,8 @@
 */node_modules
 node_modules
+reports
 */cypress/reports
+videos
 */cypress/videos
 *repo.txt
 */target
