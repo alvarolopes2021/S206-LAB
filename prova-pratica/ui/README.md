@@ -1,4 +1,4 @@
-# Exercício Avaliativo de Cypress
+# Prova prática - UI
 
 ## ▶ Como executar o projeto
 
