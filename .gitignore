@@ -11,3 +11,4 @@ videos
 *.project
 *.settings
 *link*
+*gorest_token*
